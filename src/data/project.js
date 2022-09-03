@@ -25,7 +25,7 @@ export const project=[
         tech: "ReactJS     API",
         description:"A Netflix clone website using APIs.",
         link:"https://uttkarssh-netflix.netlify.app/",
-        github:"https://github.com/Uttkarrsh/Cryptocurrency-Tracker",
+        github:"https://github.com/Uttkarrsh/Netflix-web-application",
         image:"./images/netflix-2.jpg"
     },
     {
