@@ -1,13 +1,338 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Manrope','Sans-Serif';
+}
+a{
+  text-decoration: none;
+  /* color: white; */
+}
+ul{
+  list-style: none;
+}
+body{
+  font-family: 'Manrope','Sans-Serif';
+  overflow: auto;
+}
+.homepage{
+  height: 100vh;
+  background: url("../pexels-eva-elijas-7641124.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.homepage .overlay{
+  align-items: center;
+  background-image: linear-gradient(120deg,rgba(14, 15, 15, 0.37),rgba(37, 38, 40, 0.2));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  text-align: center;
 }
+.homepage .overlay h1{
+  text-transform: uppercase;
+  font-size: 90px;
+  color: white;
+}
+.name{
+  background: linear-gradient(to right,#CCC 50%,#2c579b,#1e516a);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease-out;
+}
+.name:hover{
+  background-position: -100%;
+}
+.overlay p{
+  font-size: 36px;
+  margin-top: 10px;
+  color: white;
+}
+.overlay ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+.overlay ul li{
+  margin: 0 20px;
+}
+.overlay ul li a{
+  font-size: 48px;
+  transition: ease-out 0.3s;
+  color: white;
+}
+.overlay ul li a:hover{
+  color: #1e516a;
+}
+.header{
+  position: absolute;
+  right: 0;
+  height: 0;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  width: 250px;
+  z-index: 999999;
+}
+.header.open{
+  height: 100%;
+  background-color: rgb(1, 1, 1,0.4);
+}
+.header nav ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.header nav ul li{
+  margin: 20px 0;
+  font-size: 19px;
+}
+
+.header nav ul li a{
+  color: white;
+  padding: 6px;
+  transition: 0.3s ease-in-out;
+}
+.header nav ul li a:hover{
+  padding: 5px 10px;
+  border-radius: 2px;
+  border: 1px solid white;
+}
+.menu-btn{
+  position: absolute;
+  right: 70px;
+  margin-top: 50px;
+  transform: translate(-50%);
+  z-index: 9999999;
+}
+.menu-btn button{
+  background: transparent;
+  color: white;
+  font-size: 36px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 9999999;
+}
+
+.projects{
+  /* background: linear-gradient(120deg,rgb(1, 1, 1),rgb(0, 60, 112)); */
+  padding-bottom: 80px;
+  justify-content: center;
+  
+}
+.projects h1{
+  padding: 50px 80px;
+  font-size: 35px;
+  color: white;
+}
+.projects .cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  max-width: 1100px;
+  margin:auto;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* margin-right: 130px; */
+
+  
+}
+/* .projects .cards img{
+  width: 460px;
+  height: 410px;
+  
+  margin-bottom: 10px;
+  transition: 0.3s ease ease-in-out;
+  padding: 10px;
+  margin-top: 30px;
+} */
+.projects .cards .image{
+  transition: 0.2s ease-in-out;
+  width: 460px;
+  height: 410px;
+  background: linear-gradient(60deg,rgb(0,60,112),rgb(29, 35, 59),rgb(0, 60, 112));
+  margin-bottom: 10px;
+  transition: 0.3s ease ease-in-out;
+  position: relative;
+  padding: 10px;
+  margin-top: 30px;
+  text-align: center;
+  /* box-shadow: 1px 2px 9px #ffffff; */
+}
+.image2{
+  position: absolute;
+  top: 0%;
+  background: linear-gradient(60deg,rgb(29,35,59),rgb(0,60,112),rgb(29,35,59));
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+    transition: ease-in 0.4s;
+  
+}
+/* .image:hover{
+  opacity: 0;
+} */
+.image2:hover{
+  opacity: 1;
+}
+ .projects .cards .image:hover{
+  
+} 
+.image h1{
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 50px;
+}
+.image p{
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 60px;
+}
+.image2 p{
+  margin-top: 50px;
+}
+.image2 h1{
+  font-size: 35px;
+}
+
+/* .projects .cards a{
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0;
+} */
+
+.contact{
+  background: linear-gradient(120deg,rgb(1, 1, 1),rgb(0, 60, 112));
+  min-height: 100vh;
+  z-index: -1;
+}
+.contact h1{
+  padding: 50px 80px;
+  font-size: 35px;
+  color: white;
+}
+.contact ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+span{
+  margin-right: 20px;
+}
+.contact ul li{
+  margin: 20px;
+}
+.contact ul li a{
+  font-size: 20px;
+  color: white;
+  z-index: -1;
+}
+.linked{
+  margin-top: 5px;
+  margin-left: 300px;
+}
+.image2 .linked{
+  margin-top: 15px;
+}
+.links{
+  /* margin: 10px; */
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+}
+.github{
+  font-size: 25px;
+}
+.share{
+  font-size: 22px;
+}
+.image2 span{
+  margin: 0px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+@media (max-width:1100px){
+  .projects .cards{
+    padding: 0 20px 20px;
+    margin-left: 120px;
+  }
+}
+
+@media (max-width: 992px){
+  .homepage .overlay h1{
+    font-size: 64px;
+  }
+}
+@media (max-width:700px){
+  .projects .cards{
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+
+@media (max-width: 500px){
+
+  .projects .cards{
+    margin-right: 100px;
+  }
+
+  .projects .cards .image{
+    height: 300px;
+    width: 300px;
+    margin-top: 40px;
+  }
+
+  .image h1{
+    font-size: 25px;
+    margin-top: 0px;
+  }
+  .linked{
+    margin-left: 180px;
+  }
+  .image p{
+    margin-top: 10px;
+  }
+  .image2:hover{
+    opacity: 0;
+  }
+  .menu-btn{
+    right: 30px;
+  }
+  
+  .header.open{
+    background: rgba(1, 1, 1);
+    color: black;
+    
+  }
+
+  .homepage .overlay h1{
+    font-size: 30px;
+  }
+  .overlay p{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .overlay ul li a{
+    font-size: 20px;
+  }
+  .contact ul li a{
+    font-size: 15px;
+    z-index: -1;
+  }
+  .contact h1{
+    font-size: 24px;
+    padding: 50px 30px;
+  }
+}
+
